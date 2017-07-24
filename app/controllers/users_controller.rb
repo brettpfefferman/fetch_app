@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
-
-    if !@user
+    if current_user
+      @user = current_user
+      @dog = @user.dog
+    else 
       redirect_to root_path
     end
-  
   end
 
   def update
@@ -32,7 +32,6 @@ class UsersController < ApplicationController
     @user.gender = user_params[:gender]
     @user.bio = user_params[:bio]
 
-    puts @user 
     # save the user
     @user.save
 

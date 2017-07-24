@@ -39,3 +39,53 @@
         <%= f.submit %>
       </div>
 <% end %>
+
+<br><br>
+
+<% if @dog %>
+  <%= form_for @dog do |f| %>
+    <% if @dog.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @dog.errors.full_messages %>
+            <li>
+              <%= message %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :breed %>
+        <%= f.text_field :breed %>
+      </div>
+      <div class="field">
+        <%= f.label :age %>
+        <%= f.text_field :age %>
+      </div>
+      <div class="field">
+        <%= f.label :size %>
+        <%= f.text_field :size %>
+      </div>
+      <div class="field">
+        <%= f.label :image_one %>
+        <%= f.text_field :image_one %>
+      </div>
+      <div class="field">
+        <%= f.label :bio %>
+        <%= f.text_area :bio %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+  <% end %>
+
+<% else %>
+  <%= link_to 'add_dog', dogs_new_path %>
+
+<% end %>
