@@ -22,8 +22,26 @@ class UsersController < ApplicationController
   
   end
 
+  def update
+    # make a user object for the current user
+    @user = current_user
+
+    # update the user with the info from the form
+    @user.phone = user_params[:phone]
+    @user.age = user_params[:age]
+    @user.gender = user_params[:gender]
+    @user.bio = user_params[:bio]
+
+    puts @user 
+    # save the user
+    @user.save
+
+    # redirect
+    redirect_to '/users/settings'
+  end
+
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :age, :gender, :phone) 
     end
 end
