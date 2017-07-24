@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root'home#index'
   
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :update]
+  get '/users/settings', to: 'users#edit'
   resources :sessions, only: [:new, :create, :destroy]
 
   get '/dogs', to: 'dogs#index'

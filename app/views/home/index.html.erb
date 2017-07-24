@@ -1,1 +1,19 @@
 home index page
+
+<p>
+    <% if current_user %>
+        Welcome, <%= current_user.name %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;        
+        <%= link_to 'Edit Profile', '/users/settings' %>
+    <% else %>
+        <%= link_to 'Log In', login_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'About Us', about_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Stories', stories_path %> 
+</p>
