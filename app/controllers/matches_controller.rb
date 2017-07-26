@@ -29,11 +29,11 @@ class MatchesController < ApplicationController
       @users = User.where(:gender => gender).all
     end
     
-    # @users.each do |user|
-    #   if (user.dog) 
-    #     @dogs << user.dog
-    #   end
-    # end
+    @users.each do |user|
+      if (user.dog) 
+        @dogs << user.dog
+      end
+    end
     
   end
 
