@@ -3,12 +3,34 @@
   <head>
     <title>FetchApp</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
   </head>
 
   <body>
+    <nav>
+        <% if current_user %>
+          Welcome, <%= current_user.name %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;        
+          <%= link_to 'Edit My Profile', '/users/settings' %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'My Dogs Profile', '/dogs/settings' %> 
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Find a Match!', '/matches/new' %>  
+        <% else %>
+          <%= link_to 'Log In', login_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'About Us', about_path %>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to 'Stories', stories_path %> 
+    </nav>
     <%= yield %>
   </body>
 </html>

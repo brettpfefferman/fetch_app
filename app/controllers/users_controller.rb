@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Congratulations! You have an account with Fetch!"
-      redirect_to root_path
+      redirect_to users_path
     else
       render :new
     end
@@ -24,19 +24,19 @@ class UsersController < ApplicationController
 
   def update
     # make a user object for the current user
-    @user = current_user
+    current_user.update_attributes(user_params)
 
     # update the user with the info from the form
-    @user.phone = user_params[:phone]
-    @user.age = user_params[:age]
-    @user.gender = user_params[:gender]
-    @user.bio = user_params[:bio]
+    # @user.phone = user_params[:phone]
+    # @user.age = user_params[:age]
+    # @user.gender = user_params[:gender]
+    # @user.bio = user_params[:bio]
 
-    # save the user
-    @user.save
+    # # save the user
+    # @user.save
 
     # redirect
-    redirect_to '/users/settings'
+    redirect_to root_path
   end
 
   private

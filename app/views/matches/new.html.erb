@@ -1,0 +1,19 @@
+<h1>Match Survey</h1>
+<%= form_tag '/matches' do %>
+  <div>
+    <%= label_tag :owners_gender %>
+    <%= select_tag :gender, options_for_select(['Male','Female', 'Transgender', 'Not Important']) %>
+  </div>
+  <div>
+    <%= label_tag :owners_age %>
+    <%= select_tag :age, options_for_select(['18-24','25-34','35-50','51-70', '71-100', 'Not Important']) %>
+  </div>
+  <div>
+    <%= label_tag :dog_size %>
+    <%= select_tag :size, options_for_select(['Small', 'Medium', 'Large', 'Not Important']) %>
+  </div>
+  <div><%= submit_tag 'Find Matches' %></div>
+
+<% end %>
+    
+

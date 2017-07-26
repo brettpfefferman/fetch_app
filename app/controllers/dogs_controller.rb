@@ -8,10 +8,7 @@ class DogsController < ApplicationController
         end
 
         def new 
-            if current_user.dog 
-                redirect_to '/users/settings'
-            end
-            @dog = Dog.new
+            @dog = Dog.new()
         end
 
         def create
@@ -32,6 +29,7 @@ class DogsController < ApplicationController
         end
 
         def edit
+            @dog = current_user.dog 
         end
 
         def update
@@ -40,7 +38,6 @@ class DogsController < ApplicationController
             @dog.name = dog_params[:name]
             @dog.age = dog_params[:age]
             @dog.size = dog_params[:size]
-            @dog.breed = dog_params[:breed]
             @dog.image_one = dog_params[:image_one]
             @dog.bio = dog_params[:bio]
 
@@ -51,7 +48,7 @@ class DogsController < ApplicationController
                 puts 'error'
             end
 
-            redirect_to '/users/settings'
+            redirect_to root_path
         end
 
         def destroy
@@ -61,7 +58,7 @@ class DogsController < ApplicationController
         private
 
         def dog_params
-            params.require(:dog).permit(:name, :breed, :age, :size, :image_one, :bio)
+            params.require(:dog).permit(:name, :age, :size, :image_one, :bio)
         end
 end
 
