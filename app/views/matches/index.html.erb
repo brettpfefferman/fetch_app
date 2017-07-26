@@ -1,10 +1,9 @@
-<% @dogs.each do |dog| %>
+<h1>Matches</h1>
+
+<% @users.each do |user| %>
     <div>
-        <%= dog.name %>
-        <%= dog.age %>
-        <%= dog.size %>
-        <%= dog.image_one %>
-        <%= dog.bio %>
-        
+        User's Name: <%= user["name"] %><br>
+        Dog's Name: <%= user["dog_name"] %><br>  
+        <%= user.inspect %>      
     </div>
 <% end %>
