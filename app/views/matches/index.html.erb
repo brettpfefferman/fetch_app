@@ -1,9 +1,11 @@
 <h1>Matches</h1>
 
-<% @users.each do |user| %>
+<% @dogs.each do |dog| %>
     <div>
-        User's Name: <%= user["name"] %><br>
-        Dog's Name: <%= user["dog_name"] %><br>  
-        <%= user.inspect %>      
+        user's Name: <%= dog.user["name"] %><br>
+        Dog's Name: <%= dog["name"] %><br>  
+        <% # user.inspect %>      
     </div>
+    <br>
+    <hr>
 <% end %>

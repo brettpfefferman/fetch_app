@@ -27,16 +27,67 @@ body,
   text-align: center;
 }
 .users_edit {
+  background: url("https://i.imgur.com/Wmd5ESt.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   text-align: center;
   font-weight: bold;
   font-family: 'Londrina Shadow'
 }
 .users_new {
-  background: url("https://i.imgur.com/gtuHZui.png") no-repeat center center fixed;
+  background: url("https://i.imgur.com/HESkDs6.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
   font-family: 'Londrina Shadow'
+}
+
+.home_stories {
+    text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow';
+}
+
+.home_about {
+    text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow';
+}
+
+.dog_edit {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow';
+  font-size: 20px;
+  margin: left
+}
+
+.dog_new {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow'
+}
+
+.dog_index {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow'
+}
+
+.matches_new {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow';
+  font-size: 30px
+}
+
+.users_index {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Londrina Shadow';
+  font-size: 30px
 }

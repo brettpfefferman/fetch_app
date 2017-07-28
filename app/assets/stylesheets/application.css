@@ -17,3 +17,8 @@
  input {
     color: black !important;
  }
+ label {
+ font-size: 17px;
+ display: block;
+ width: 100px;
+}

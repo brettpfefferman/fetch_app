@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Fetch: A Meet Up Application for your Dog
+This application's purpose has been created to allow dog owners to meet up with other dog owners with selective common interests in their dogs. 
 
-Things you may want to cover:
+While finding a match, this application allows dog owners to be safe as it allows the user to customize a specific age group and gender for another dog owner.  
 
-* Ruby version
+Fetch can be a useful tool to help new dog owners socialize their dog with new dogs and people. 
 
-* System dependencies
+![](/Users/brettpfefferman/Desktop/Screen Shot 2017-07-28 at 5.46.06 AM.png)
 
-* Configuration
+![](/Users/brettpfefferman/Desktop/Screen Shot 2017-07-28 at 5.46.25 AM.png)
 
-* Database creation
+![](/Users/brettpfefferman/Desktop/Screen Shot 2017-07-28 at 5.46.46 AM.png)
 
-* Database initialization
 
-* How to run the test suite
+# Technologies Used
 
-* Services (job queues, cache servers, search engines, etc.)
+- CSS
+- HTML
+- BootStrap
+- PaperClip
+- Ruby on Rails
 
-* Deployment instructions
+# Future Installments
+- Simple messaging system for Users to connect with other Users.
+- Mapping system to locate where nearest matches can be identified.
 
-* ...
+
+
+

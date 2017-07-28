@@ -1,9 +1,10 @@
-
-<% if @dog %>
-
+<div class="dog_edit">
+<link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
+<div class="error_messages">
+<h1 style="color:black; font-size:80px">Tell Us About Your Dog!</h1>
+    <% if @dog %>
     <%= form_for @dog do |f| %>
         <% if @dog.errors.any? %>
-            <div class="error_messages">
                 <h2>Form is invalid</h2>
                 <ul>
                 <% for message in @dog.errors.full_messages do %>
@@ -18,36 +19,39 @@
             <%= f.label :name %>
             <%= f.text_field :name %>
         </div>
+        <hr>
         <div class="field">
             <%= f.label :age %>
             <%= f.text_field :age %>
         </div>
-        </div>
+        <hr>
         <div class="field">
             <%= f.label :breed %>
             <%= f.text_field :breed %>
         </div>
+        <hr>
         <div class="field">
             <%= f.label :size %>
             <%= f.select :size, [['Small'],['Medium'],['Large']] %>
         </div>
+        <hr>
         <div class="field">
             <%= f.label :image %>
-            <%= f.file_field :image %>
+            <%= f.file_field :image_content_type %>
         </div>
+        <hr>
         <div class="field">
             <%= f.label :bio %>
             <%= f.text_area :bio %>
         </div>
+        <hr>
         <div class="actions">
             <%= f.submit %>
         </div>
     <% end %>
 
-    <%= link_to "Delete this dog!", dog_path(@dog), method: :delete %>
-
+    <%= link_to "Delete this dog?", dog_path(@dog), method: :delete %>
 <% else %>
-
     <%= form_for @new_dog, :url => {:controller => "dogs", :action => "create"} do |f| %>
     
     <% if @new_dog.errors.any? %>
@@ -68,7 +72,7 @@
       <%= f.label :age %>
       <%= f.text_field :age %>
     </div>
-    </div>
+   
     <div class="field">
         <%= f.label :breed %>
         <%= f.text_field :breed %>
@@ -86,8 +90,7 @@
       <%= f.text_field :bio %>
     </div>
     <div class="actions"><%= f.submit %></div>
-
-  <% end %>
-
+    <% end %>
+</div>
 <% end %>
 
