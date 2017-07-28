@@ -3,6 +3,7 @@
 <div class="error_messages">
 <h1 style="color:black; font-size:80px">Tell Us About Your Dog!</h1>
     <% if @dog %>
+    <%= image_tag @dog.image.url, width: "500" %>
     <%= form_for @dog do |f| %>
         <% if @dog.errors.any? %>
                 <h2>Form is invalid</h2>

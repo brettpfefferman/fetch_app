@@ -20,7 +20,7 @@ class DogsController < ApplicationController
                 redirect_to dogs_path
             else
                 # redirect
-                render :new
+                render :edit
             end
         end
 
