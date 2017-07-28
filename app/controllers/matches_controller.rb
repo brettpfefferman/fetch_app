@@ -14,10 +14,12 @@ class MatchesController < ApplicationController
     puts size
 
     # get dogs first
-    if (size == 'Not Important') 
-      @dogs = Dog.all
+    if (size == 'Not Important' && gender == 'Not Important') 
+      @dogs = Dog.all.where.not(user_id: current_user.id)
+      return
     else 
-      @dogs = Dog.where(:size => size).all
+      @dogs = Dog.where(:size => size).all.where.not(user_id: current_user.id)
+      return
     end
 
     @dogs = @dogs.to_a
@@ -30,7 +32,6 @@ class MatchesController < ApplicationController
     end
     
     @users.each do |user|
-      puts user.dog
       if (user.dog)
         puts 'adding users dog' 
         @dogs << user.dog
