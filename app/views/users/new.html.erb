@@ -1,30 +1,41 @@
-<h1>Log In</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="users_new">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
+  <h1 style="color:white;font-size:150px">Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="color:white;font-size:20px"class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
+    <div style="color:white;font-size:20px"class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div style="color:white;font-size:20px"class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div style="color:white;font-size:20px"class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <br>
+    <div style="color:grey;font-size:30px"class="actions"><%= f.submit %></div>
+</div>
 <% end %>

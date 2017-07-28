@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
     @user = User.new
   end
@@ -16,31 +17,35 @@ class UsersController < ApplicationController
   def edit
     if current_user
       @user = current_user
-      @dog = @user.dog
+      @dog = Dog.find_by(user_id: @user.id)
     else 
       redirect_to root_path
     end
   end
 
   def update
-    # make a user object for the current user
-    current_user.update_attributes(user_params)
 
-    # update the user with the info from the form
-    # @user.phone = user_params[:phone]
-    # @user.age = user_params[:age]
-    # @user.gender = user_params[:gender]
-    # @user.bio = user_params[:bio]
+    puts '-------------------------'
+    puts user_params
 
-    # # save the user
-    # @user.save
+    if current_user.update_attributes(user_params)
+      puts "Update is successful"
+      puts current_user
 
-    # redirect
-    redirect_to root_path
+      puts '--------'
+
+      
+      redirect_to root_path
+    else 
+      render :edit
+    end
+
   end
 
   private
+
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :age, :gender, :phone) 
     end
+
 end

@@ -1,41 +1,53 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages do %>
-          <li>
-            <%= message %>
-          </li>
-          <% end %>
-      </ul>
+<div class="users_edit">
+<link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet"> 
+<h1 style="color:black;font-size:100px">Edit Your Profile Here</h1> 
+<br>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages do %>
+            <li>
+              <%= message %>
+            </li>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :age %>
-    <%= f.text_field :age %>
-  </div>
-  <div class="field">
-    <%= label_tag :gender %>
-    <%= select_tag :gender, options_for_select(['Male','Female', 'Transgender', 'Not Important']) %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <br>
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <br>
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+    <br>
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+    </div>
+    <br>
+
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :gender %>
+      <%= f.select :gender, options_for_select(['Male', 'Female', 'Transgender', 'Not Important'], @user[:gender]) %>
+    </div>
+    <br>
+    <div style="color:grey;font-size:20px"class="field">
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+    </div>
+    <br>
+    <div style="color:grey;font-size:20px"class="actions">
+      <%= f.submit %>
+    </div>
+</div>
 <% end %>

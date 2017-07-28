@@ -1,19 +1,15 @@
 class DogsController < ApplicationController
 
         def index
-            @dogs = Dog.all 
+            @curr_user = current_user
+            @dogs = Dog.find_by(user_id: @curr_user.id)
         end
 
         def show
         end
 
-        def new 
-            @dog = Dog.new()
-        end
-
         def create
             # make a dog object with the info from the form
-            puts dog_params
             @dog = Dog.new(dog_params)
             @dog.user_id = current_user.id
 
@@ -29,17 +25,21 @@ class DogsController < ApplicationController
         end
 
         def edit
-            @dog = current_user.dog 
+
+            @user = current_user 
+            @dog = Dog.find_by(user_id: @user.id)
+
+            if @dog 
+                puts "You don't have a dog"
+            else 
+                @new_dog = Dog.new
+            end
+            
         end
 
         def update
-            @dog = current_user.dog
-
-            @dog.name = dog_params[:name]
-            @dog.age = dog_params[:age]
-            @dog.size = dog_params[:size]
-            @dog.image_one = dog_params[:image_one]
-            @dog.bio = dog_params[:bio]
+            @dog = Dog.find_by(user_id: current_user.id)
+            @dog.update_attributes(dog_params)
 
             if @dog.save
                 flash[:notice] = "Saved Dog!"
@@ -48,17 +48,19 @@ class DogsController < ApplicationController
                 puts 'error'
             end
 
-            redirect_to root_path
+            redirect_to '/dogs'
         end
 
         def destroy
-            # @dog.destroy
+            @dog = Dog.find(params[:id])
+            @dog.destroy
+            redirect_to '/dogs'
         end
 
         private
 
         def dog_params
-            params.require(:dog).permit(:name, :age, :size, :image_one, :bio)
+            params.require(:dog).permit(:name, :age, :breed, :size, :image, :bio)
         end
 end
 

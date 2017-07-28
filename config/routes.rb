@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/dogs/:id/edit', to: 'dogs#edit'
   post '/dogs', to: 'dogs#create'
   patch '/dogs/:id', to: 'dogs#update', as: 'dog'
+  delete 'dogs/:id', to: 'dogs#destroy'
 
 
   get '/matches', to: 'matches#index'

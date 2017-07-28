@@ -1,13 +1,28 @@
-<h1>Log In</h1>
+<div class="sessions_new">
+<link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
+<h1 style="color:white;font-size:125px">Log In</h1>
 <p id="alert"><%= alert %></p>
 <%= form_tag sessions_path do %>
-  <div class="field">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div style="color:grey;font-size:20px"class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
   </div>
-  <div class="field">
+  <div style="color:grey;font-size:20px"class="field">
     <%= label_tag :password %>
     <%= password_field_tag :password %>
   </div>
-  <div class="actions"><%= submit_tag "Log In" %></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div style="color:grey;font-size:20px"class="actions"><%= submit_tag "Log In" %></div>
+</div>
 <% end %>

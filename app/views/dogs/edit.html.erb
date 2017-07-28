@@ -1,45 +1,93 @@
-<% if @dog == nil %>
 
-<%= link_to 'make new dog here', new_dog_path %>
+<% if @dog %>
+
+    <%= form_for @dog do |f| %>
+        <% if @dog.errors.any? %>
+            <div class="error_messages">
+                <h2>Form is invalid</h2>
+                <ul>
+                <% for message in @dog.errors.full_messages do %>
+                    <li>
+                    <%= message %>
+                    </li>
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        <div class="field">
+            <%= f.label :age %>
+            <%= f.text_field :age %>
+        </div>
+        </div>
+        <div class="field">
+            <%= f.label :breed %>
+            <%= f.text_field :breed %>
+        </div>
+        <div class="field">
+            <%= f.label :size %>
+            <%= f.select :size, [['Small'],['Medium'],['Large']] %>
+        </div>
+        <div class="field">
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+        </div>
+        <div class="field">
+            <%= f.label :bio %>
+            <%= f.text_area :bio %>
+        </div>
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    <% end %>
+
+    <%= link_to "Delete this dog!", dog_path(@dog), method: :delete %>
 
 <% else %>
 
-<%= form_for @dog do |f| %>
-    <% if @dog.errors.any? %>
-    <div class="error_messages">
+    <%= form_for @new_dog, :url => {:controller => "dogs", :action => "create"} do |f| %>
+    
+    <% if @new_dog.errors.any? %>
+      <div class="error_messages">
         <h2>Form is invalid</h2>
         <ul>
-        <% for message in @dog.errors.full_messages do %>
-            <li>
-            <%= message %>
-            </li>
-        <% end %>
+          <% for message in @dog.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
         </ul>
-    </div>
+      </div>
     <% end %>
     <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
     <div class="field">
-        <%= f.label :age %>
-        <%= f.text_field :age %>
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+    </div>
+    </div>
+    <div class="field">
+        <%= f.label :breed %>
+        <%= f.text_field :breed %>
     </div>
     <div class="field">
         <%= f.label :size %>
         <%= f.select :size, [['Small'],['Medium'],['Large']] %>
     </div>
     <div class="field">
-        <%= f.label :image_one %>
-        <%= f.text_field :image_one %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
     </div>
     <div class="field">
-        <%= f.label :bio %>
-        <%= f.text_area :bio %>
+      <%= f.label :bio %>
+      <%= f.text_field :bio %>
     </div>
-    <div class="actions">
-        <%= f.submit %>
-    </div>
-    <% end %>
+    <div class="actions"><%= f.submit %></div>
+
+  <% end %>
 
 <% end %>
+
