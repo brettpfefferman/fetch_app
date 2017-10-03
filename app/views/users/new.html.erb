@@ -1,6 +1,6 @@
 <div class="users_new">
   <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
-  <h1 style="color:black;font-size:150px">Sign Up</h1>
+  <h1 style="color:white;font-size:150px">Sign Up</h1>
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
       <div class="error_messages">
@@ -16,26 +16,24 @@
     <br>
     <br>
     <br>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" <%= f.text_field :name %>>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your Email" <%= f.text_field :email %>>
+      </div>
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Password"<%= f.password_field :password %>>
+      </div>
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Confirm Password" <%= f.password_field :password_confirmation %>>
+      </div>
+      <br>
+      <div type="submit" class="btn btn-light">
+      <%= f.submit %>
+      </div>
+    </form>
     <br>
-    <br>
-    <br>
-    <div style="color:black;font-size:20px"class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div style="color:black;font-size:20px"class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
-    <div style="color:black;font-size:20px"class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div style="color:black;font-size:20px"class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </div>
-    <br>
-    <div style="color:grey;font-size:30px"class="actions"><%= f.submit %></div>
 </div>
 <% end %>

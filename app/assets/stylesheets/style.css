@@ -5,7 +5,7 @@ body,
   height: 95%
 }
 .view {
-  background: url("https://i.imgur.com/dw4y8O0.png")no-repeat center center fixed;
+  background: url("https://i.imgur.com/ygKk4vV.jpg")no-repeat center center fixed;
   -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -15,7 +15,7 @@ body,
     text-align: center;
 }
 .sessions_new {
-  background: url("https://i.imgur.com/CesYAmO.png")no-repeat center center fixed;
+  background: url("https://i.imgur.com/lTGdAXR.jpg")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,9 +25,16 @@ body,
 }
 .home_about {
   text-align: center;
+  background: url("https://i.imgur.com/lTGdAXR.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Londrina Shadow', cursive;
+  font-weight: bold;
 }
 .users_edit {
-  background: url("https://i.imgur.com/Wmd5ESt.png") no-repeat center center fixed;
+  background: url("https://i.imgur.com/csAt1TY.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,7 +44,7 @@ body,
   font-family: 'Londrina Shadow'
 }
 .users_new {
-  background: url("https://i.imgur.com/HESkDs6.png") no-repeat center center fixed;
+  background: url("https://i.imgur.com/lTGdAXR.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -59,6 +66,7 @@ body,
 }
 
 .dog_edit {
+  background: url("https://i.imgur.com/F82TVik.jpg") no-repeat center center fixed;
   text-align: center;
   font-weight: bold;
   font-family: 'Londrina Shadow';
@@ -90,4 +98,29 @@ body,
   font-weight: bold;
   font-family: 'Londrina Shadow';
   font-size: 30px
+}
+
+.form-group {
+  width: 20%;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'sans-serif';
+  text-align: center;
+  margin-left: 600px;
+}
+
+.about-paragraph {
+  text-align: center;
+  font-size: 15px;
+  padding: 135px 500px;
+  color: white;
+  font-family: 'Lucida Sans', sans-serif;
+}
+
+.btn.btn-light {
+  font-family: 'Lucida Sans', 'sans-serif';
+  color: white;
+}
+
+.btn {
+  color: white;
 }
