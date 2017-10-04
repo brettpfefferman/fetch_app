@@ -18,22 +18,25 @@
     <form>
       <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name %>
+       <input type="text" class="form-control" <%= f.text_field :name %>>
       </div>
       <br>
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <input type="text" class="form-control"
+        <%= f.text_field :email %>>
       </div>
       <br>
       <div class="form-group">
         <%= f.label :phone %>
-        <%= f.text_field :phone %>
+        <input type="text" class="form-control"
+        <%= f.text_field :phone %>>
       </div>
       <br>
       <div class="form-group">
         <%= f.label :age %>
-        <%= f.text_field :age %>
+        <input type="text" class="form-control"
+        <%= f.text_field :age %>>
       </div>
       <br>
 
@@ -44,7 +47,8 @@
       <br>
       <div class="form-group">
         <%= f.label :bio %>
-        <%= f.text_area :bio %>
+        <input type="text-area" class="form-control"
+        <%= f.text_area :bio %>>
       </div>
       <br>
       <div style="color:grey;font-size:20px"class="actions">
